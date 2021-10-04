@@ -18,7 +18,4 @@ gulp.task('default', () => {
     .pipe(gcmq())
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/css'))
-    .pipe(rename({
-      extname: '.min.css'
-    }));
 });
