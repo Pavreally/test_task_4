@@ -1,0 +1,137 @@
+// # Grid breakpoints
+$w-xs: 0;
+$w-sm: 576px;
+$w-md: 768px;
+$w-lg: 992px;
+$w-xl: 1200px;
+
+// Colors
+$black: #000;
+$gray: #29242C;
+$gray-2: #292841;
+$gray-dark: #060606;
+$white: #fff;
+$white-2: #F7F7F7;
+$yellow: #FCE558;
+$yellow-2: #FAD264;
+$yellow-3: #FCE559;
+$blue-dark: #312D48;
+$pink: #E130E3;
+$purple: #42196D;
+$purple-2: #4E3D71;
+$purple-3: #8E67C0;
+$purple-4: #B967C0;
+$orange: #ED867A;
+$purple-dark: #320B61;
+
+// # Typography
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy-Bold'),
+    url('../assets/fonts/Gilroy/Gilroy-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy/Gilroy-Bold.woff') format('woff'),
+    url('../assets/fonts/Gilroy/Gilroy-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy-Regular'),
+    url('../assets/fonts/Gilroy/Gilroy-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy/Gilroy-Regular.woff') format('woff'),
+    url('../assets/fonts/Gilroy/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy-Medium'),
+    url('../assets/fonts/Gilroy/Gilroy-Medium.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy/Gilroy-Medium.woff') format('woff'),
+    url('../assets/fonts/Gilroy/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: local('Mulish Bold'), local('Mulish-Bold'),
+      url('../assets/fonts/Mulish/Mulish-Bold.woff2') format('woff2'),
+      url('../assets/fonts/Mulish/Mulish-Bold.woff') format('woff'),
+      url('../assets/fonts/Mulish/Mulish-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: local('Mulish Regular'), local('Mulish-Regular'),
+      url('../assets/fonts/Mulish/Mulish-Regular.woff2') format('woff2'),
+      url('../assets/fonts/Mulish/Mulish-Regular.woff') format('woff'),
+      url('../assets/fonts/Mulish/Mulish-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Regular'), local('Lato-Regular'),
+      url('../assets/fonts/Lato/Lato-Regular.woff2') format('woff2'),
+      url('../assets/fonts/Lato/Lato-Regular.woff') format('woff'),
+      url('../assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Bold'), local('Lato-Bold'),
+      url('../assets/fonts/Lato/Lato-Bold.woff2') format('woff2'),
+      url('../assets/fonts/Lato/Lato-Bold.woff') format('woff'),
+      url('../assets/fonts/Lato/Lato-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-size-base: 18px;
+$font-size-base-mb: 14px;
+
+// Default
+$h1-font-size: 50px;
+$h2-font-size: 36px;
+$h3-font-size: $h2-font-size - 4;
+$h4-font-size: $h3-font-size - 4;
+$h5-font-size: $h4-font-size - 4;
+$h6-font-size: $h5-font-size - 4;
+
+$h1-line-height: 62px;
+$h2-line-height: 45px;
+$h3-line-height: 30px;
+$h4-line-height: 30px;
+$h5-line-height: 30px;
+$h6-line-height: 25px;
+
+// > 992px
+$h1-font-size-lg: 36px;
+$h2-font-size-lg: 30px;
+$h3-font-size-lg: $h2-font-size-lg - 2;
+$h4-font-size-lg: $h3-font-size-lg - 2;
+$h5-font-size-lg: $h4-font-size-lg - 2;
+$h6-font-size-lg: $h5-font-size-lg - 2;
+
+// > 768px
+$h1-font-size-sm: 30px;
+$h2-font-size-sm: 28px;
+$h3-font-size-sm: $h2-font-size-sm - 2;
+$h4-font-size-sm: $h3-font-size-sm - 2;
+$h5-font-size-sm: $h4-font-size-sm - 2;
+$h6-font-size-sm: $h5-font-size-sm - 2;

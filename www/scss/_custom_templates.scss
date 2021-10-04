@@ -1,0 +1,69 @@
+// # Templates
+%font-bold {
+  font-weight: bold;
+  font-style: normal;
+}
+
+%font-medium {
+  font-weight: 500;
+  font-style: normal;
+}
+
+// Font Size Classes
+%fs-14p {
+  font-size: 14px;
+}
+
+%fs-16p {
+  font-size: 16px;
+}
+
+%fs-18p {
+  font-size: 18px;
+}
+
+%fs-20p {
+  font-size: 20px;
+}
+
+%fs-24p {
+  font-size: 24px;
+}
+
+// Font Line Height Classes
+%txt-lh-19p {
+  line-height: 19px;
+}
+
+%txt-lh-22p {
+  line-height: 22px;
+}
+
+%txt-lh-24p {
+  line-height: 24px;
+}
+
+%txt-lh-25p {
+  line-height: 25px;
+}
+
+%txt-lh-26p {
+  line-height: 26px;
+}
+
+%txt-lh-29p {
+  line-height: 29px;
+}
+
+%txt-lh-43p {
+  line-height: 43px;
+}
+
+// Colors Classes
+%purple-dark {
+  color: $purple-dark;
+}
+
+%yellow {
+  color: $yellow-2;
+}

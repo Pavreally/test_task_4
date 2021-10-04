@@ -1,0 +1,65 @@
+// # Adaptive
+@mixin media-max($width) {
+  @media all and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-min($width) {
+  @media all and (min-width: $width) {
+    @content;
+  }
+}
+
+// # Size
+@mixin size-max($x, $y) {
+  @if ($x !='') {
+    max-width: $x;
+  }
+
+  @if ($y !='') {
+    max-height: $y;
+  }
+}
+
+@mixin size-min($x, $y) {
+  @if ($x !='') {
+    min-width: $x;
+  }
+
+  @if ($y !='') {
+    min-height: $y;
+  }
+}
+
+@mixin size($x, $y) {
+  @if ($x !='') {
+    width: $x;
+  }
+
+  @if ($y !='') {
+    height: $y;
+  }
+}
+
+// Title Underline
+%title-underline {
+  &::after {
+    height: 2px;
+    display: block;
+    margin: 39px auto 26px;
+    content: '';
+    width: 83px;
+
+    @include media-max($w-sm) {
+      margin: 26px auto;
+    }
+  }
+}
+
+@mixin title-underline($color) {
+  &::after {
+    @extend %title-underline;
+    background: $color;
+  }
+}
