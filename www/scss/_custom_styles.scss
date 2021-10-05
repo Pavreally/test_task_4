@@ -1277,6 +1277,7 @@ footer {
     &:last-of-type {
       @include media-min($w-lg) {
         text-align: right;
+        padding: 0;
       }
     }
   }
