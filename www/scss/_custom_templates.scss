@@ -30,7 +30,15 @@
   font-size: 24px;
 }
 
+%fs-50p {
+  font-size: 50px;
+}
+
 // Font Line Height Classes
+%txt-lh-17p {
+  line-height: 17px;
+}
+
 %txt-lh-19p {
   line-height: 19px;
 }
@@ -49,6 +57,10 @@
 
 %txt-lh-26p {
   line-height: 26px;
+}
+
+%txt-lh-28p {
+  line-height: 28px;
 }
 
 %txt-lh-29p {

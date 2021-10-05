@@ -97,6 +97,39 @@ h6 {
 .title {
   @extend %font-bold;
   text-transform: uppercase;
+
+  @media all and (max-width: 380px) {
+    font-size: 26px;
+    line-height: 40px;
+  }
+}
+
+.subtitle-h5 {
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+  margin: 0;
+
+  @include media-max($w-lg) {
+    font-size: $h5-font-size-lg;
+  }
+
+  @include media-max($w-sm) {
+    font-size: $h5-font-size-sm;
+  }
+}
+
+.subtitle-h6 {
+  font-size: $h6-font-size;
+  line-height: $h6-line-height;
+  margin: 0;
+
+  @include media-max($w-lg) {
+    font-size: $h6-font-size-lg;
+  }
+
+  @include media-max($w-sm) {
+    font-size: $h6-font-size-sm;
+  }
 }
 
 .line-white {
@@ -183,6 +216,51 @@ button {
   }
 }
 
+.btn-link {
+  @include size-max(350px, '');
+  @include size(100%, 56px);
+  @extend %txt-lh-22p;
+  border-radius: 30px;
+  background: linear-gradient(75.93deg, #FAD264 44.82%, #FCE558 70.67%);
+  color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 auto;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .25);
+  transition: .3s ease-in-out;
+
+  &:hover {
+    color: $black;
+    text-decoration: none;
+    opacity: .9;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .22);
+  }
+}
+
+// BG
+.pentagram {
+  @include media-min($w-lg) {
+    @include size(155px, 155px);
+    background: url('/www/dist/assets/icons/pentagram.svg') no-repeat center center;
+    margin: -41px 114px 0 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.br-only-xl {
+  @include media-max($w-xl) {
+    display: none;
+  }
+}
+
+.subtitle-20p {
+  @extend %fs-20p;
+  @extend %font-bold;
+}
 
 // # Header
 header {
@@ -199,6 +277,7 @@ header {
   // 576px
   @include media-max($w-sm) {
     min-height: 1423px;
+    padding: 0 15px;
   }
 
   .header-inner {
@@ -212,9 +291,11 @@ header {
 
   // Header Background
   picture {
+    @include size(100%, 100%);
     min-height: 860px;
-    height: 100%;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 
     @include media-max($w-md) {
       min-height: 1306px;
@@ -241,12 +322,6 @@ header {
 
       @include media-max($w-sm) {
         margin: 0 0 37px;
-      }
-    }
-
-    p>br {
-      @include media-max($w-xl) {
-        display: none;
       }
     }
 
@@ -438,7 +513,7 @@ header {
 
 // # Main
 main {
-  margin: 89px 0 106px;
+  margin: 89px 0 0;
 
   section {
     padding: 0 45px;
@@ -488,10 +563,6 @@ main {
       color: $white;
       margin: 0 0 38px;
     }
-
-    h6 {
-      margin: 0;
-    }
   }
 
   .programm-card-content>div {
@@ -499,7 +570,9 @@ main {
 
     &:first-child>img {
       @include size-max(256px, 384px);
+      @include size(100%, auto);
       padding: 0 0 0 15px;
+      object-fit: contain;
 
       @include media-max($w-md) {
         padding: 0;
@@ -564,8 +637,13 @@ main {
     padding: 82px 15px;
   }
 
-  h2 {
+  >.container {
+    @include media-max($w-sm) {
+      padding: 0;
+    }
+  }
 
+  h2 {
     &::after {
       margin: 39px auto 63px;
     }
@@ -616,11 +694,19 @@ main {
       @extend %font-bold;
       padding: 30px 3px 0px;
       margin: 0 0 16px;
+
+      @include media-max($w-sm) {
+        padding: 30px 10px 0;
+      }
     }
 
     &:last-of-type {
       padding: 0px 3px 24px;
       margin: 0;
+
+      @include media-max($w-sm) {
+        padding: 0px 10px 24px;
+      }
     }
   }
 }
@@ -661,25 +747,34 @@ main {
 %step-arrow {
   @include size(63px, 160px);
 
-  // reset css for crossbrowser
+  // reset styles for crossbrowser
   margin: 0;
   padding: 0;
 
   display: block;
   content: '';
-  margin: 0 -53px -6px 0;
+  margin: 0 -46px -6px 0;
   position: absolute;
   right: 0;
+
+  @include media-min($w-xl) {
+    top: -19px;
+  }
 
   @include media-max($w-xl) {
     margin: 0px 29px -176px 0;
     transform: rotate(90deg);
+    top: 67px;
   }
 }
 
 .programm-steps {
   background: $white-2;
   margin: 80px 0;
+
+  >div {
+    position: relative;
+  }
 
   // Section 3 - Subtitle
   div>p {
@@ -712,7 +807,7 @@ main {
 
       @include media-max($w-xl) {
         text-align: center;
-        margin: 0 0 40px;
+        margin: 0 auto 40px;
       }
 
       span {
@@ -724,7 +819,7 @@ main {
     &:not(:first-of-type) {
       >div {
         img {
-          margin: 0 0 0 80px;
+          margin: 0 0 0 60px;
 
           @include media-max($w-xl) {
             margin: 0;
@@ -744,6 +839,11 @@ main {
       // Section 3 - Description
       p {
         padding: 0 10px 0 0;
+
+        @include media-max($w-xl) {
+          max-width: 540px;
+          padding: 0;
+        }
       }
     }
 
@@ -794,7 +894,7 @@ main {
 
       p {
         @include media-min($w-xl) {
-          padding: 0 0 0 56px;
+          padding: 0 0 0 40px;
         }
       }
     }
@@ -815,7 +915,7 @@ main {
 
       p {
         @include media-min($w-xl) {
-          padding: 0 0 0 56px;
+          padding: 0 0 0 28px;
         }
       }
     }
@@ -837,5 +937,360 @@ main {
         }
       }
     }
+  }
+}
+
+// Section 4
+.programm-progress {
+  padding: 80px 0 120px;
+
+  h2 {
+    margin: 0 0 65px;
+  }
+
+  article {
+    margin: 0 0 75px;
+
+    .subtitle-h5 {
+      @include size-max(540px, 79px);
+      @include size(100%, 100%);
+      @extend %font-bold;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0 auto 63px;
+    }
+
+    &:first-of-type>.subtitle-h5 {
+      background: $gray-light;
+      color: $black;
+    }
+
+    &:last-of-type>.subtitle-h5 {
+      background: $purple;
+      color: $yellow-2;
+    }
+  }
+
+  ul {
+    img {
+      @include size-max(540px, 315px);
+      @include size(100%, 100%);
+      border-radius: 40px;
+      display: block;
+      margin: 0 auto 48px;
+    }
+
+    p {
+      @extend %txt-lh-22p;
+      max-width: 540px;
+      text-align: center;
+      margin: 0 auto 50px;
+
+      span {
+        @extend %font-bold;
+      }
+    }
+  }
+}
+
+// Section 5
+.programm-about {
+  background: $white-3;
+  padding: 80px 45px 106px;
+
+  @include media-max($w-md) {
+    padding: 80px 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  article {
+    >h2 {
+      text-align: center;
+      margin: 0 0 43px;
+    }
+
+    >p {
+      @extend %txt-lh-28p;
+      font-size: 24px;
+      max-width: 1100px;
+      text-align: center;
+      margin: 0 auto 36px;
+    }
+
+    >ul {
+      img {
+        @include size-max(445px, 345px);
+        @include size(100%, auto);
+        border-radius: 40px;
+        display: block;
+        margin: 0 0 30px 15px;
+
+        @include media-max($w-lg) {
+          margin: 0 auto 30px;
+        }
+      }
+    }
+
+    >ul>li {
+      &:first-of-type {
+        @include media-min($w-lg) {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.programm-about-list {
+  padding: 20px 30px 20px 0;
+
+  @include media-max($w-xl) {
+    padding: 20px 30px;
+  }
+
+  @include media-max($w-lg) {
+    padding: 30px;
+  }
+
+  @include media-max($w-sm) {
+    padding: 0px;
+  }
+
+  >li {
+    @extend %txt-lh-22p;
+    margin: 0 0 17px;
+    padding: 0 0 0 34px;
+
+    &::before {
+      @include size(15px, 21px);
+      background: url("data:image/svg+xml,%3Csvg width='15' height='21' viewBox='0 0 15 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.9992 11.5719C14.5088 11.1715 14.5088 10.3996 13.9992 9.99926L2.31233 0.81669C1.56147 0.226727 0.489854 0.924288 0.72541 1.84969L2.93721 10.5389C2.97841 10.7008 2.97841 10.8704 2.93721 11.0323L0.725411 19.7215C0.489855 20.6469 1.56147 21.3444 2.31233 20.7545L13.9992 11.5719Z' fill='%2342196D'/%3E%3C/svg%3E%0A") no-repeat center center;
+      display: block;
+      content: '';
+      margin: 0 0 0 -34px;
+      position: absolute;
+    }
+  }
+}
+
+// Section 6 - Pre Footer
+.pre-footer {
+  background: $purple-5 url('../assets/images/footer_bg_1920.jpg') no-repeat center center;
+  background-size: cover;
+  color: $white;
+  min-height: 744px;
+  padding: 0;
+
+  @include media-max($w-xl) {
+    background: $purple-5;
+  }
+
+  .container {
+    padding: 130px 0 119px;
+
+    @include media-max($w-md) {
+      padding: 80px 0;
+    }
+  }
+}
+
+.pre-footer-inner {
+  margin: 0;
+
+  .title {
+    @extend %fs-50p;
+    line-height: 130%;
+    margin: 0 0 23px;
+
+    @include media-max($w-lg) {
+      font-size: $h1-font-size-lg;
+      text-align: center;
+    }
+
+    @include media-max($w-sm) {
+      font-size: $h1-font-size-sm;
+    }
+
+    @media all and (max-width: 380px) {
+      font-size: 26px;
+      line-height: 40px;
+    }
+
+    span {
+      color: $yellow-2;
+    }
+  }
+
+  .subtitle-20p {
+    margin: 0 0 28px;
+
+    @include media-max($w-lg) {
+      text-align: center;
+    }
+  }
+
+  .pre-footer-attention {
+    @extend %fs-20p;
+    @extend %font-bold;
+    color: $yellow-2;
+    line-height: 130%;
+    text-transform: uppercase;
+    margin: 0 0 0 78px;
+
+    @include media-max($w-lg) {
+      margin: 0 0 26px;
+      text-align: center;
+    }
+  }
+}
+
+.pre-footer-list {
+  margin: 0 0 26px;
+
+  >li {
+    display: flex;
+    align-items: center;
+    min-height: 54px;
+    padding: 0 0 0 78px;
+    margin: 0 0 34px;
+
+    &::before {
+      @include size(100%, 100%);
+      display: block;
+      content: '';
+      margin: 0 0 0 -78px;
+      position: absolute;
+    }
+
+    &:nth-of-type(1) {
+
+      &::before {
+        @include size-max(59px, 50px);
+        background: url('../assets/icons/cicle_arrow.svg') no-repeat center center;
+      }
+    }
+
+    &:nth-of-type(2) {
+
+      &::before {
+        @include size-max(58px, 54px);
+        background: url('../assets/icons/list_1.svg') no-repeat center center;
+      }
+    }
+
+    &:nth-of-type(3) {
+
+      &::before {
+        @include size-max(54px, 54px);
+        background: url('../assets/icons/watch.svg') no-repeat center center;
+      }
+    }
+  }
+}
+
+.pre-footer-form {
+  border: 2px solid $white;
+  border-radius: 15px;
+  padding: 32px 28px;
+
+  p {
+    text-align: center;
+
+    &:first-of-type {
+      margin: 0 0 45px;
+    }
+
+    &:last-of-type {
+      @extend %fs-14p;
+    }
+  }
+
+  input {
+    max-width: 100%;
+    margin: 0 0 20px;
+
+    &:last-of-type {
+      margin: 0 0 30px;
+    }
+  }
+
+  button {
+    background: $yellow-4;
+    max-width: 100%;
+    margin: 0 0 26px;
+    box-shadow: 0 10px 40px rgba(255, 223, 135, .5);
+
+    &:hover {
+      background: $yellow-3;
+      box-shadow: 0 18px 40px rgba(255, 223, 135, .5);
+    }
+  }
+}
+
+// # Footer
+footer {
+  @extend %fs-14p;
+  @extend %txt-lh-17p;
+  font-family: 'lato';
+  color: $white-4;
+  background: $purple-dark-2;
+  padding: 30px 0 42px;
+
+  ul {
+    margin: 0;
+  }
+
+  p {
+    margin: 0 0 5px;
+  }
+}
+
+.footer-inner {
+  li {
+    @include media-min($w-lg) {
+      min-height: 148px;
+    }
+
+    @include media-max($w-lg) {
+      text-align: center;
+      margin: 0 0 25px;
+    }
+
+    &:first-of-type {
+      @extend %fs-16p;
+      @extend %txt-lh-19p;
+    }
+
+    &:nth-of-type(2) {
+      @include media-min($w-lg) {
+        border-left: 1px solid $white-3;
+      }
+
+      @include media-min($w-lg) {
+        padding: 0 0 0 31px;
+      }
+    }
+
+    &:last-of-type {
+      @include media-min($w-lg) {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.footer-logo {
+  @include size(42px, 42px);
+  margin: 0 0 25px auto;
+
+  @include media-max($w-lg) {
+    margin: 0 auto 25px;
+  }
+
+  img {
+    @include size(42px, 42px);
   }
 }
